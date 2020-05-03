@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import deceptionCover from '../images/deception-cover.png';
-import disappearanceCover from '../images/disapperance-cover.png';
+import disappearanceCover from '../images/disappearance-cover.png';
 import badgersCover from '../images/badgers-disease-cover.png';
 import princessCover from '../images/lost-princess-cover.png';
 import { connect } from 'react-redux';

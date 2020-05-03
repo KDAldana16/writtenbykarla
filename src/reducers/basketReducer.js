@@ -1,5 +1,5 @@
 
-import { ADD_PRODUCT_TO_BASKET, GET_NUMBERS_BASKET } from '../actions/types';
+import { ADD_PRODUCT_TO_BASKET, GET_NUMBERS_BASKET, INCREASE_QUANTITY, DECREASE_QUANTITY } from '../actions/types';
 
 const initialState = {
   basketNumbers: 0,
@@ -7,25 +7,29 @@ const initialState = {
   products: {
     Deception: {
       name: "Deception",
-      price: 10.99,
+      tagName: 'deception',
+      price: 3.99,
       numbers: 0,
       inCart: false
     },
     Disappearance: {
       name: "Disappearance",
-      price: 10.99,
+      tagName: 'disappearance',
+      price: 3.99,
       numbers: 0,
       inCart: false
     },
     BadgersDisease: {
       name: "Badger's Disease",
-      price: 10.99,
+      tagName: 'badgersDisease',
+      price: 3.99,
       numbers: 0,
       inCart: false
     },
     TheLostPrincess: {
       name: "The Lost Princess",
-      price: 10.99,
+      tagName: 'lostPrincess',
+      price: 3.99,
       numbers: 0,
       inCart: false
     },
@@ -33,27 +37,56 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
+  let productSelected = "";
   switch(action.type){
       case ADD_PRODUCT_TO_BASKET:
-        let addQuantity = { ...state.products[action.payload]}
+        productSelected = { ...state.products[action.payload]}
 
-        addQuantity.numbers += 1;
-        addQuantity.inCart = true;
-        console.log(addQuantity)
+        productSelected.numbers += 1;
+        productSelected.inCart = true;
+        console.log(productSelected);
 
         return {
           ...state,
           basketNumbers: state.basketNumbers + 1,
-          cartCost: state.products[action.payload].price,
+          cartCost: state.cartCost + state.products[action.payload].price,
           products: {
             ...state.products,
-            [action.payload]: addQuantity
+            [action.payload]: productSelected
           }
         }
         case GET_NUMBERS_BASKET:
           return {
             ...state
           }
+        case INCREASE_QUANTITY:
+          productSelected = { ...state.products[action.payload]}
+          productSelected.numbers += 1;
+          return {
+            ...state,
+            cartCost: state.cartCost + state.products[action.payload],
+            products: {
+              ...state.products,
+              [action.payload]: productSelected
+            }
+          }
+        case DECREASE_QUANTITY:
+        productSelected = { ...state.products[action.payload]};
+
+        if (productSelected.numbers === 0) {
+          productSelected.numbers = 0;
+        } else {
+          productSelected.numbers -=1;
+        }
+        productSelected.numbers -= 1;
+        return {
+          ...state,
+          cartCost: state.cartCost - state.products[action.payload],
+          products: {
+            ...state.products,
+            [action.payload]: productSelected
+          }
+        }
       default:
         return state;
   }

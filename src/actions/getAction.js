@@ -1,4 +1,4 @@
-import { GET_NUMBERS_BASKET } from './types'
+import { GET_NUMBERS_BASKET } from './types';
 
 export const getNumbers = () => {
   return (dispatch) => {

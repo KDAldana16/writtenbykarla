@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import './App.css';
 import { Provider } from 'react-redux';
-import store from './store.js'
+import store from './store.js';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {

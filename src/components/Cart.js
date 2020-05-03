@@ -1,16 +1,17 @@
 
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
+import { productQuantity } from '../actions/productQuantity';
 
 import deceptionCover from '../images/deception-cover.png';
-import disappearanceCover from '../images/disapperance-cover.png';
+import disappearanceCover from '../images/disappearance-cover.png';
 import badgersCover from '../images/badgers-disease-cover.png';
 import princessCover from '../images/lost-princess-cover.png';
 
-function Cart({basketProps}) {
+function Cart({basketProps, productQuantity}) {
   console.log(basketProps);
 
-  let productsInCart = [];
+  let productsInCart = [ ];
 
   Object.keys(basketProps.products).forEach( function(item) {
     console.log(item);
@@ -19,21 +20,35 @@ function Cart({basketProps}) {
       productsInCart.push(basketProps.products[item])
     }
     console.log(productsInCart);
-  })
+  });
 
-  const productImages = [deceptionCover, disappearanceCover, badgersCover, princessCover]
+  // const productImages = [deceptionCover, disappearanceCover, badgersCover, princessCover]
+  const productImages = (product) => {
+    if ( product.tagName === 'deception') {
+      return deceptionCover;
+    } else if( product.tagName === 'disappearance') {
+      return disappearanceCover
+    } else if( product.tagName === 'badgersDisease') {
+      return badgersCover
+    } else if( product.tagName === 'lostPrincess') {
+      return princessCover
+    }
+  }
 
   productsInCart = productsInCart.map( (product, index) => {
+    console.log("My product is");
+    console.log(product);
     return (
-      <Fragment>
-        <div className="product"><ion-icon name="close-circle"></ion-icon><img src={productImages[index]} />
+      <Fragment key={index}>
+
+        <div className="product"><ion-icon name="close-circle"></ion-icon><img src={productImages(product)} alt=""/>
           <span className="sm-hide">{product.name}</span>
         </div>
         <div className="price sm-hide">${product.price}</div>
         <div className="quantity">
-          <ion-icon className="decrease" name="arrow-back-circle-outline"></ion-icon>
+          <ion-icon onClick={() => productQuantity('decrease', product.tagName)} className="decrease" name="arrow-back-circle-outline"></ion-icon>
             <span>{product.numbers}</span>
-          <ion-icon className="increase" name="arrow-forward-circle-outline"></ion-icon>
+          <ion-icon onClick={() => productQuantity('increase', product.tagName)} className="increase" name="arrow-forward-circle-outline"></ion-icon>
         </div>
         <div className="total">${product.numbers * product.price}</div>
       </Fragment>
@@ -57,10 +72,10 @@ function Cart({basketProps}) {
       </div>
     </div>
   );
-}
+};
 
 const mapStateToProps = state => ({
   basketProps: state.basketState
 });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, { productQuantity } )(Cart);
