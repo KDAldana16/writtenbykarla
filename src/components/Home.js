@@ -1,6 +1,6 @@
 import React from 'react';
 import welcome from '../images/welcome.jpg'
-import deception from '../images/deception-cover.png'
+import deception from '../images/deception-cover.jpeg'
 
 function Home() {
   return (

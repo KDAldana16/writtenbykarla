@@ -3,10 +3,10 @@ import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { productQuantity, clearProduct } from '../actions/productQuantity.js';
 
-import deceptionCover from '../images/deception-cover.png';
-import disappearanceCover from '../images/disappearance-cover.png';
-import badgersCover from '../images/badgers-disease-cover.png';
-import princessCover from '../images/lost-princess-cover.png';
+import deceptionCover from '../images/deception-cover.jpeg';
+import disappearanceCover from '../images/disappearance-cover.jpeg';
+import badgersCover from '../images/badgers-disease-cover.jpeg';
+import princessCover from '../images/lost-princess-cover.jpeg';
 
 function Cart({basketProps, productQuantity, clearProduct}) {
   console.log(basketProps);
