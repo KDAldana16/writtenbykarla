@@ -12,7 +12,6 @@ function Navbar(props) {
   }, [])
   return (
     <header>
-      <div className="overlay"> </div>
       <nav>
         <h2>WrittenbyKarla</h2>
         <ul>

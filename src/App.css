@@ -7,6 +7,10 @@
   font-family: Lucida Console;
 }
 
+.App {
+  background-color: #ffd1dc;
+}
+
 header {
   background-image: url('./images/colorful-gems.jpg');
   background-size: cover;
@@ -199,4 +203,39 @@ li a {
   .basketTotalContainer {
     padding-right: 8%;
   }
+}
+
+/* FOOTER */
+footer {
+  background-color: #add8e6;
+  width: auto;
+  padding: 15px 15px;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.column {
+  margin: 5px;
+  display: inline-grid;
+  justify-content: space-between;
+}
+
+/* HOME */
+.img-size {
+  height: 800px;
+  width: 100%;
+}
+
+.AboutMe {
+  display: block;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.text-center {
+  text-align: center;
 }
