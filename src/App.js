@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Store from './components/Store';
@@ -10,6 +10,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from './store.js';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 
 function App() {
   return (
