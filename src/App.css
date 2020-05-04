@@ -239,3 +239,7 @@ footer {
 .text-center {
   text-align: center;
 }
+
+.recommendations li {
+  list-style: decimal;
+}
