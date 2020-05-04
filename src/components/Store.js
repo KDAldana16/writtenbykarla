@@ -13,7 +13,10 @@ const Store = (props) => {
     <Fragment>
       <div className="container">
         <h2 className="store-title">WELCOME TO MY STORE</h2>
-        <h3 className="store-para">Thank you for deciding to buy my work! It means very much to me. Please go to my Blog page for helpful tips on writing and my Recommendations page for my personal book recommendations.</h3>
+        <div className="container">
+          <h3 className="store-para">Thank you for deciding to buy my work!</h3>
+          <h3 className="store-para">It means very much to me. Please go to my Blog page for helpful tips on writing and my Recommendations page for my personal book recommendations.</h3>
+        </div>
       </div>
       <div className="container">
         <div className="image">

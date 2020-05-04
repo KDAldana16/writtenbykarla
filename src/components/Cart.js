@@ -2,6 +2,8 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { productQuantity, clearProduct } from '../actions/productQuantity.js';
+import PaymentMethods from './components/PaymentMethods'
+
 
 import deceptionCover from '../images/deception-cover.jpeg';
 import disappearanceCover from '../images/disappearance-cover.jpeg';
@@ -73,7 +75,14 @@ function Cart({basketProps, productQuantity, clearProduct}) {
       </div>
     </div>
   );
+
+  <div>
+    <PaymentMethods />
+  </div>
 };
+
+
+
 
 const mapStateToProps = state => ({
   basketProps: state.basketState

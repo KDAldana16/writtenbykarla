@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <div>
       <footer>
+        <hr></hr>
         <div className="container">
           <div className="columns">
             <div className="column">
