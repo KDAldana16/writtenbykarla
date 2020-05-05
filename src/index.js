@@ -4,9 +4,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-export CardForm from './components/CardForm'
-export BankForm from './components/BankForm'
-export PaymentMethods from './components/PaymentMethods'
 
 
 

@@ -15,7 +15,7 @@ const Store = (props) => {
         <h2 className="store-title">WELCOME TO MY STORE</h2>
         <div className="container">
           <h3 className="store-para">Thank you for deciding to buy my work!</h3>
-          <h3 className="store-para">It means very much to me. Please go to my Blog page for helpful tips on writing and my Recommendations page for my personal book recommendations.</h3>
+          <h3 className="store-para">It means very much to me. Please go to my Recommendations page for my personal book recommendation, and join my mailing list for the latest updates and releases!</h3>
         </div>
       </div>
       <div className="container">

@@ -6,6 +6,13 @@ const Footer = () => {
     <div>
       <footer>
         <hr></hr>
+        <label>
+          Join my Mailing List!
+        </label>
+        <form>
+          <input type="text" name="email" placeholder="Email Address"/>
+          <input type="submit" value="Submit" />
+        </form>
         <div className="container">
           <div className="columns">
             <div className="column">

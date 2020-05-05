@@ -2,7 +2,6 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { productQuantity, clearProduct } from '../actions/productQuantity.js';
-import PaymentMethods from './components/PaymentMethods'
 
 
 import deceptionCover from '../images/deception-cover.jpeg';
@@ -75,10 +74,6 @@ function Cart({basketProps, productQuantity, clearProduct}) {
       </div>
     </div>
   );
-
-  <div>
-    <PaymentMethods />
-  </div>
 };
 
 
