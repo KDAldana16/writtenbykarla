@@ -10,6 +10,10 @@ const Footer = () => {
           Join my Mailing List!
         </label>
         <form>
+          <input type="text" name="name" placeholder="First Name" />
+          <input type="text" name="name" placeholder="Last Name" />
+        </form>
+        <form>
           <input type="text" name="email" placeholder="Email Address"/>
           <input type="submit" value="Submit" />
         </form>
